@@ -1,0 +1,115 @@
+index_title=BTRFS Management and Config
+index_subtitle=Btrfs Management and Configuration - Main Status Page
+index_noconfig=btrfs_cmd not configured in config file, please click Module Config and config btrfs_cmd=btrfs
+index_btrfstoolsinfo_h=BTRFS Tools Info
+index_foundbtrfs=Found btrfs tools in:
+index_notfoundbtrfs=ERROR no btrfs tools
+index_version=Version: 
+index_latestlogs_h=<p><b><h1>Latest Logs</h1></b><p><p>
+index_latestlogs_d=#dmesg |grep -i btrfs
+index_latestlogs_m=#tail -n 1000 /var/log/messages |grep -i btrfs
+index_btrfslogical=<p><b><h1>BTRFS FileSystems - Logical Volumes</h1></b><p><p>
+index_btrfsfis=#btrfs filesystem show
+index_youhave1=You have: <b>
+index_youhave2=</b> BTRFS Filesystems<p>
+index_fs=Filesystem
+index_lb=Label:
+index_uu=uuid:
+index_dev=Devices:
+index_mounted_h=<p><b><h1>Status of Mounted BTRFS FileSystems</h1></b><p><p>
+index_mountgrep=#mount |grep btrfs
+index_youhave3=</b> mounted btrfs filesystems<p>
+index_mountp=<font color=darkblue>Mount point: </font>
+index_btrfsdf=#btrfs filesystem df
+index_btrfsss=#btrfs scrub status
+index_btrfsbal=#btrfs balance status
+index_btrfsds=#btrfs device stats
+index_btrfsrs=#btrfs replace status
+index_btrfssl=#btrfs subvolume list
+index_foot=btrfsman 2014
+
+txt_warn=<font color=red>WARNING!</font>
+txt_error=<font color=red>ERROR!</font>
+txt_p=<p>
+txt_arg=Arguments:
+txt_warn_noscrub=Never scrubed, perhapls you shoud scrub!
+txt_warn_scruberrors=Latest scrub detected errors!
+txt_warn_ro=Warning RadOnly FileSystem
+
+
+
+index_bt_rescan=Rescan BTRFS Devices
+index_bt_rescan_help=Click this button to #btrfs device scan
+index_bt_label=Label Device
+index_bt_label_help=Click this button to #btrfs label
+index_bt_create=Create New BTRFS Filesystems
+index_bt_create_help=Click this button to #mkfs btrfs
+
+index_bt_scrub=Scrub Menu
+index_bt_scrub_help=Click this button to start/stop scrub
+index_bt_bal=Balance Menu
+index_bt_bal_help=Click this button for balance menu
+index_bt_sub=Subvolume Menu
+index_bt_sub_help=Click this button for subvolume management
+index_bt_arp=Add/Remove/Replace Device  Menu
+index_bt_arp_help=Click this button to replace a device or add or remove devices
+
+index_bt_defrag=Defrag Menu
+index_bt_defrag_help=Click this button for defrag menu
+
+
+scrub_title=Btrfs Management and Configuration - Scrub Menu
+scrub_mounted_h=<h1>Scrubbing Options for Mounted Filesystems</h1>
+scrub_bt_start=Start Scrub
+scrub_bt_stop=Stop Scurb
+scrub_bt_resume=Resume Scrub
+scrub_bt_start_help=Click this button to start scrubbing, check ro for a read only scrub.
+scrub_bt_stop_help=Click this button to stop scrubbing, check confirm if you really want to stop scrub.
+scrub_bt_resume_help=Click this button to resume scrubbing.
+
+rescan_title=Btrfs Management and Configuration - Scan for BTRFS devices
+rescan_cmd=#btrfs device scan
+rescan_complete=Rescan complete please click back
+
+label_title=Btrfs Management and Configuration - Label Menu
+label_changed=Label Changed
+label_bt_change=Change Label
+label_bt_change_help=Change the label to a new one
+label_mounted_h=<h1>Change Label of a mounted Filesystem</h1>
+
+defrag_title=Btrfs Management and Configuration - Defrag Menu
+defrag_started=Defrag Started
+label_bt_defragstartmp=Start Defraging Mount Point
+label_bt_defragstartmp_help=Start Defraging a mount point, -r means recursivelly, you may also use other options like -v -c -f -s -l -t  please check man btrfs
+label_defragmp_h=<h1>Defrag a mounted Filesystem</h1>
+label_defragfile_h=<h1>Choose a file to Defrag</h1>
+label_bt_defragstartfile=Start Defrag a File
+label_bt_defragstartfile=Start Defrag a File, any file, choose a file first
+
+balance_title=Btrfs Management and Configuration - Balance Menu
+balance_h=<h1>Choose a mountpoint to start/stop/resume/cancel a balance</h1>
+balance_stared=Balance operation started
+balance_bt_balance=Start Balance
+balance_bt_balance_help=Click to start balancing, you may input options like -d -m -s -f, please check man btrfs. <p>Since there are no active balance operations for this device you can only start a balance and not pause/restart/cancel.
+balance_btrfsbal_v=#btrfs balance status -v
+balance_bt_pause=Pause Balance
+balance_bt_pause_help=Click to pause an active balance
+balance_bt_resume=Resume Balance
+balance_bt_resume_help=Click to resume a paused balance
+balance_bt_cancel=Cancel Balance
+balance_bt_cancel_help=Click to cancel balance operation
+
+
+sub_title=Btrfs Management and Configuration - Subvolume Menu
+sub_h=<h1>Subvolume Info and Options - WORK IN PROGRESS - DO NOT USE</h1>
+sub_bt_delete=Delete Subvolume
+sub_bt_delete_help=Click to delete SubVolume, must confirm!
+sub_bt_create=Create New SubVolume
+sub_bt_create_help=Click to create SubVolume, must confirm!
+sub_operation=Subvolume operation executed
+
+arr_title=Btrfs Management and Configuration - Add Remove Replace
+arr_h=<h1>Subvolume Info and Options - WORK IN PROGRESS - DO NOT USE</h1>
+arr_help=<p>Please be carefull when adding or deleting devices. <p>If you have a failed drive, first try Replace as it is much faster. Otherwise first add a device and then remove the failed device. <p>
+
+arr_operation=ARR operation executed

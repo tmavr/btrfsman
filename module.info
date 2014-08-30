@@ -1,0 +1,6 @@
+desc=BRTFS Manager
+os_support=*-linux
+category=servers
+longdesc=BRTFS Manager and Config
+name=btrfsman
+version=1.700
