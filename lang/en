@@ -5,10 +5,10 @@ index_btrfstoolsinfo_h=BTRFS Tools Info
 index_foundbtrfs=Found btrfs tools in:
 index_notfoundbtrfs=ERROR no btrfs tools
 index_version=Version: 
-index_latestlogs_h=<p><b><h1>Latest Logs</h1></b><p><p>
+index_latestlogs_h=<p><h1>Latest Logs</h1><p><p>
 index_latestlogs_d=#dmesg |grep -i btrfs
 index_latestlogs_m=#tail -n 1000 /var/log/messages |grep -i btrfs
-index_btrfslogical=<p><b><h1>BTRFS FileSystems - Logical Volumes</h1></b><p><p>
+index_btrfslogical=<p><h1>BTRFS FileSystems - Logical Volumes</h1><p><p>
 index_btrfsfis=#btrfs filesystem show
 index_youhave1=You have: <b>
 index_youhave2=</b> BTRFS Filesystems<p>
@@ -16,7 +16,7 @@ index_fs=Filesystem
 index_lb=Label:
 index_uu=uuid:
 index_dev=Devices:
-index_mounted_h=<p><b><h1>Status of Mounted BTRFS FileSystems</h1></b><p><p>
+index_mounted_h=<p><h1>Status of Mounted BTRFS FileSystems</h1><p><p>
 index_mountgrep=#mount |grep btrfs
 index_youhave3=</b> mounted btrfs filesystems<p>
 index_mountp=<font color=darkblue>Mount point: </font>
@@ -115,9 +115,14 @@ arr_help=<p>Please be carefull when adding or deleting devices. <p>If you have a
 arr_operation=ARR operation executed
 arr_parted_h=#parted -l
 
-arr_expert_h=<h1>Expert Mode:</h1>
+arr_expert_h=<h1>Expert Mode Add/Delete Device</h1>
 arr_expert_bt_help=Click button to commit the expert mode command
 arr_expert_bt=Expert Mode Comit
+
+arr_expert_replace_h=<h1>Expert Mode Replace Device</h1>
+arr_expert_replace_help=Please Refresh to Update Replace Status.<p>You can also view the status on the index of btrfsman page. <p>Please be carefull.<p>
+arr_expert_replace_bt=Expert Mode Replace Comit
+txt_replacesynopsis=btrfs replace start [-Bfr] srcdev|devid targetdev path
 
 txt_error_noparted=GNU parted Not Found, please install<p>
 
@@ -127,5 +132,5 @@ txt_devicesynopsis=btrfs device add [-Kf] dev [dev...] path <p> btrfs device del
 mkfs_title=Btrfs Management and Configuration - Make FileSystem
 mkfs_h=<h1>mkfs - WORK IN PROGRESS - DO NOT USE</h1>
 mkfs_help=<p>Please be carefull. <p> Note that partition info is shown via GNU parted, just make sure you double check any device names.<p>
-mkfs_expert_h=<h1>Expert Mode:</h1>
+mkfs_expert_h=<h1>Expert Mode</h1>
 mkfs_expert_bt=Expert Mode Comit
