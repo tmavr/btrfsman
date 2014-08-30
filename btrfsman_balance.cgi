@@ -83,4 +83,6 @@ sub balancemenu {
 
     $did++;
   }
+  
+  print "<h1>CONVERT TO: -dconvert=raid1 -mconvert=raid1 /mnt</h1>";
 }

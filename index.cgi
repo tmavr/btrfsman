@@ -147,7 +147,7 @@ if ($btrfsprog){
   print ui_buttons_row("btrfsman_defrag.cgi",$text{'index_bt_defrag'}, $text{'index_bt_defrag_help'}); 
   print ui_buttons_row("btrfsman_balance.cgi", $text{'index_bt_bal'}, $text{'index_bt_bal_help'});
   print ui_buttons_row('btrfsman_sub.cgi',  $text{'index_bt_sub'}, $text{'index_bt_sub_help'});
-  print ui_buttons_row('btrfsman_arr.cgi',  $text{'index_bt_arp'}, $text{'index_bt_arp_help'});
+  print ui_buttons_row('btrfsman_arr.cgi',  $text{'index_bt_arr'}, $text{'index_bt_arr_help'});
   print ui_buttons_end();
 
 
@@ -170,6 +170,8 @@ if ($btrfsprog){
   $result =~  s/\n/<br>/g;
   print ui_table_row( $result);
   print ui_hidden_table_end();
+  
+  #print "<p><a h ref=/syslog/> Go to Log Management</a>";
 
 } #end_if ($btrfsprog)
 

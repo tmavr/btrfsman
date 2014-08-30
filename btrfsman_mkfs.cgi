@@ -30,8 +30,8 @@ if (($act) && ($mp) && ($dev)  ) {
 }
 else
 {
-	print $text{'arr_h'};	
-  print $text{'arr_help'};
+	print $text{'mkfs_h'};	
+  print $text{'mkfs_help'};
   
   show_parted();
 
@@ -49,7 +49,7 @@ else
   print ui_textbox('opt_o',' ',20,0), $text{'txt_p'};
   print ui_textbox('opt_dev','/dev/sdWW /dev/sdXX /dev/sdYY /dev/sdZZ',40,0), $text{'txt_p'};
   
-  print ui_form_end( [[undef, $text{'arr_expert_bt'}]] );
+  print ui_form_end( [[undef, $text{'mkfs_expert_bt'}]] );
   
   
 	

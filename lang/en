@@ -51,8 +51,8 @@ index_bt_bal=Balance Menu
 index_bt_bal_help=Click this button for balance menu
 index_bt_sub=Subvolume Menu
 index_bt_sub_help=Click this button for subvolume management
-index_bt_arp=Add/Remove/Replace Device  Menu
-index_bt_arp_help=Click this button to replace a device or add or remove devices
+index_bt_arr=Add/Remove/Replace Device  Menu
+index_bt_arr_help=Click this button to replace a device or add or remove devices
 
 index_bt_defrag=Defrag Menu
 index_bt_defrag_help=Click this button for defrag menu
@@ -109,7 +109,23 @@ sub_bt_create_help=Click to create SubVolume, must confirm!
 sub_operation=Subvolume operation executed
 
 arr_title=Btrfs Management and Configuration - Add Remove Replace
-arr_h=<h1>Subvolume Info and Options - WORK IN PROGRESS - DO NOT USE</h1>
-arr_help=<p>Please be carefull when adding or deleting devices. <p>If you have a failed drive, first try Replace as it is much faster. Otherwise first add a device and then remove the failed device. <p>
+arr_h=<h1>Add Remove Replace - WORK IN PROGRESS - DO NOT USE</h1>
+arr_help=<p>Please be carefull when adding or deleting devices. <p>If you have a failed drive, first try Replace as it is much faster. Otherwise first add a device and then remove the failed device. <p> Note that partition info is shown via GNU parted, just make sure you double check any device names.<p>
 
 arr_operation=ARR operation executed
+arr_parted_h=#parted -l
+
+arr_expert_h=<h1>Expert Mode:</h1>
+arr_expert_bt_help=Click button to commit the expert mode command
+arr_expert_bt=Expert Mode Comit
+
+txt_error_noparted=GNU parted Not Found, please install<p>
+
+txt_mkfssynopsis=mkfs.btrfs [ -A alloc-start ] [ -b byte-count ] [ -d data-profile ] [ -f ] [ -n nodesize ] [ -l leafsize ] [ -L label ] [ -m metadata profile ] [ -M mixed data+metadata ] [ -s sectorsize ] [ -r rootdir ] [ -K ] [ -O feature1,feature2,... ] [ -h ] [ -V ] device [ device ... ]
+txt_devicesynopsis=btrfs device add [-Kf] dev [dev...] path <p> btrfs device delete dev [dev...] path <p>
+
+mkfs_title=Btrfs Management and Configuration - Make FileSystem
+mkfs_h=<h1>mkfs - WORK IN PROGRESS - DO NOT USE</h1>
+mkfs_help=<p>Please be carefull. <p> Note that partition info is shown via GNU parted, just make sure you double check any device names.<p>
+mkfs_expert_h=<h1>Expert Mode:</h1>
+mkfs_expert_bt=Expert Mode Comit
