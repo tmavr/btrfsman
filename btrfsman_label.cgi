@@ -70,7 +70,7 @@ sub label_menu {
     print ui_columns_end();
 
     print ui_buttons_start();
-    print ui_buttons_row("btrfsman_label.cgi",  $text{'label_bt_change'},  $text{'label_bt_change_help'}, ui_hidden('act', 'label'), ui_hidden('mountpoint', @mountedrive[$did]), ui_textbox('newlabel','NewLabel'));
+    print ui_buttons_row("btrfsman_label.cgi",  $text{'label_bt_change'},  $text{'label_bt_change_help'}, ui_hidden('act', 'label'), ui_hidden('mountpoint', @mountedrive[$did]), ui_textbox('newlabel','label'));
     print ui_buttons_end();
 
     print "<p><p>";

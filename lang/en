@@ -104,12 +104,13 @@ balance_bt_cancel_help=Click to cancel balance operation
 
 
 sub_title=Btrfs Management and Configuration - Subvolume Menu
-sub_h=<h1>Subvolume Info and Options - WORK IN PROGRESS - DO NOT USE</h1>
+sub_h=<h1>Subvolume Info and Options</h1>
 sub_bt_delete=Delete Subvolume
 sub_bt_delete_help=Click to delete SubVolume, must confirm!
 sub_bt_create=Create New SubVolume
 sub_bt_create_help=Click to create SubVolume, must confirm!
 sub_operation=Subvolume operation executed
+sub_bt_snapshot=Create Snapshot
 
 arr_title=Btrfs Management and Configuration - Add Remove Replace
 arr_h=<h1>Add Remove Replace</h1>
