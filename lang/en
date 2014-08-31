@@ -36,6 +36,8 @@ txt_warn_noscrub=Never scrubed, perhapls you shoud scrub!
 txt_warn_scruberrors=Latest scrub detected errors!
 txt_warn_ro=Warning RadOnly FileSystem
 
+txt_error_string=Not a safe string to use
+txt_confirm_command=Please press button to Confirm you want to execute the command!<p>
 
 
 index_bt_rescan=Rescan BTRFS Devices

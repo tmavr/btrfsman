@@ -21,11 +21,11 @@ if ($mountpoint =~ /[ %&<>!\x27\x60\x3B\x3A\x\n\r\l]/) {
 }
 
 if (($act) && ($mountpoint) ) {
-  #if ($newlabel) {
-    print "Taking Action Executing Command:#", $text{'txt_p'};
-    print "btrfs fi $act $mountpoint $opt", $text{'txt_p'};
-    print $text{'balance_stared'}, $text{'txt_p'} ;
-  #}
+
+  $cmd = "btrfs fi $act $opt $mountpoint 2>&1";
+  print "Taking Action Executing Command:#", $cmd, $text{'txt_p'};
+  $result=`$cmd`;
+  print $cmd, $text{'txt_p'}, $text{'balance_stared'}, $text{'txt_p'} ;
 }
 else{
 	

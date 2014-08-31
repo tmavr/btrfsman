@@ -11,87 +11,76 @@ if($in){
   print $text{'txt_arg'}, $in, $text{'txt_p'};
 }
 
-$act = $in{'act'};
-$dev =  $in{'dev'};
-$mp = $in{'mp'};
-$opt = $in{'opt'};
+$opt_cmd = $in{'opt_cmd'};
+$opt_ad =  $in{'opt_ad'};
+$opt_o = $in{'opt_o'};
+$opt_dev = $in{'opt_dev'};
+$opt_mp = $in{'opt_mp'};
+$opt_source_dev =  $in{'opt_source_dev'};
+$opt_target_dev = $in{'opt_target_dev'};
 
 
+#more sanity check would be welcome...
 if ($dev =~ /[ %&<>!\x27\x60\x3B\x3A\x\n\r\l]/) {
 	print "not a safe string";
 }
 
-if (($act) && ($mp) && ($dev)  ) {
-  #if ($newlabel) {
-  #  print "Taking Action Executing Command:#", $text{'txt_p'};
-  #  print "btrfs device $act $dev $mp $opt", $text{'txt_p'};
-  #  print $text{'arr_operation'}, $text{'txt_p'} ;
-  #}
-}
-else
-{
-	print $text{'arr_h'};	
-  print $text{'arr_help'};
-  
-  show_parted();
-  
-  show_fs();
+if (($opt_cmd) && ($opt_ad) && ($opt_dev) && ($opt_mp) ) {
 
- 	@mountedrive=show_replace_status();
- 	
-
-  print $text{'arr_expert_h'};
-  print $text{'txt_devicesynopsis'}; 
-
-
-    
-  print ui_form_start("btrfsman_arr.cgi");
-  # 'form-data'
-  #$text{'arr_expert_bt'},  $text{'arr_expert_bt_help'}, 
-
-  print ui_textbox('opt_cmd', 'btrfs device',20,1), $text{'txt_p'};
-  #print ui_textbox('opt_ar','add',20,0), $text{'txt_p'};
-  print ui_select("opt_ad", 1, [ "add", "delete"]), , $text{'txt_p'};  
-
-  #print ui_textbox('opt_d','-d raid10',20,0), $text{'txt_p'};
-  #print ui_textbox('opt_label','-L NewLabel',30,0), $text{'txt_p'};
-  print ui_textbox('opt_o',' ',20,0), $text{'txt_p'};
-  print ui_textbox('opt_dev','/dev/sdWW /dev/sdXX /dev/sdYY /dev/sdZZ',40,0), $text{'txt_p'};
-  #print ui_textbox('opt_mp','/mnt/XXX',40,0), $text{'txt_p'};
-  print ui_select('opt_mp', 1, [@mountedrive]), $text{'txt_p'};
-  
-  
-  print ui_form_end( [[undef, $text{'arr_expert_bt'}]] );
-  
-  
-  
-
-  
-  print $text{'arr_expert_replace_h'};
-  print $text{'arr_expert_replace_help'};  
-  
-
-  
-  print $text{'txt_replacesynopsis'}; 
- 
-  print ui_form_start("btrfsman_arr.cgi");
-  # 'form-data'
-  #$text{'arr_expert_bt'},  $text{'arr_expert_replace_bt_help'}, 
-  print ui_textbox('opt_cmd', 'btrfs replace start',20,1), $text{'txt_p'};
-  #print ui_textbox('opt_ar','add',20,0), $text{'txt_p'};
-  #print ui_textbox('opt_d','-d raid10',20,0), $text{'txt_p'};
-  #print ui_textbox('opt_label','-L NewLabel',30,0), $text{'txt_p'};
-  print ui_textbox('opt_o',' ',20,0), $text{'txt_p'};
-  print ui_textbox('opt_source_dev','/dev/sdSOURCE',40,0), $text{'txt_p'};
-  print ui_textbox('opt_target_dev','/dev/sdTARGET',40,0), $text{'txt_p'};
-  #print ui_textbox('opt_mp','/mnt/XXX',40,0), $text{'txt_p'};
-  print ui_select('opt_mp', 1, [@mountedrive]), $text{'txt_p'};
-  
-  print ui_form_end( [[undef, $text{'arr_expert_replace_bt'}]] ); 
+	$cmd = "$opt_cmd $opt_ad $opt_o $opt_dev $opt_mp 2>&1";
+	print "Taking Action Executing Command:#", $cmd, $text{'txt_p'};
+  $result=`$cmd`;
+  print $result;
 	
 }
+else{
+	if (($opt_cmd) && ($opt_source_dev) && ($opt_target_dev) && ($opt_mp) ) {
+		$cmd = "$opt_cmd $opt_o $opt_source_dev $opt_target_dev $opt_mp 2>&1";
+		print "Taking Action Executing Command:#", $cmd, $text{'txt_p'};
+	  $result=`$cmd`;
+	  print $result;		
+  }
+	else
+	{
+		print $text{'arr_h'};	
+	  print $text{'arr_help'};
+	  
+	  show_parted();
+	  
+	  show_fs();
+	
+	 	@mountedrive=show_replace_status();
+	 	
+	
+	  print $text{'arr_expert_h'};
+	  print $text{'txt_devicesynopsis'}; 
+	  print ui_form_start("btrfsman_arr.cgi");
+	
+	  print ui_hidden('opt_cmd', 'btrfs device'), $text{'txt_p'};
+	  print ui_select("opt_ad", 1, [ "add", "delete"]), , $text{'txt_p'};  
+	  print ui_textbox('opt_o',' ',20,0), $text{'txt_p'};
+	  print ui_textbox('opt_dev','/dev/sdWW /dev/sdXX /dev/sdYY /dev/sdZZ',40,0), $text{'txt_p'};
+	  print ui_select('opt_mp', 1, [@mountedrive]), $text{'txt_p'};
+	  
+	  print ui_form_end( [[undef, $text{'arr_expert_bt'}]] );
+	  
+	  
+	  print $text{'arr_expert_replace_h'};
+	  print $text{'arr_expert_replace_help'};  
+	  print $text{'txt_replacesynopsis'}; 
+	 
+	  print ui_form_start("btrfsman_arr.cgi");
+	  print ui_hidden('opt_cmd', 'btrfs replace start'), $text{'txt_p'};
+	  print ui_textbox('opt_o',' ',20,0), $text{'txt_p'};
+	  print ui_textbox('opt_source_dev','/dev/sdSOURCE',40,0), $text{'txt_p'};
+	  print ui_textbox('opt_target_dev','/dev/sdTARGET',40,0), $text{'txt_p'};
+	  print ui_select('opt_mp', 1, [@mountedrive]), $text{'txt_p'};
+	  
+	  print ui_form_end( [[undef, $text{'arr_expert_replace_bt'}]] ); 
+		
+	}
 
-
+}
  
 ui_print_footer('/', 'Webmin index', '', 'Module menu');
 
@@ -127,6 +116,6 @@ sub show_replace_status{
 
     $did++;
   }
-  print "AAA", @mountedrive,"XXX";
+  
   return @mountedrive;
 }

@@ -16,10 +16,16 @@ if ($act) {
   if (($mp) && ($ro)) {
     print "$in<p>Taking Action Executing Command:#";
     if ($ro eq 'ro'){
-    	print "btrfs scrub $act $mp -R";
+    	$cmd= "btrfs scrub $act $mp -R 2>&1";
+    	print "Executing:", $cmd, "<p>";
+    	$result = `$cmd`;
+    	print $result;
     } else {
     	if ($ro eq 'rw'){
-    		print "btrfs scrub $act $mp";
+      	$cmd= "btrfs scrub $act $mp 2>&1";
+      	print "Executing:", $cmd, "<p>";
+      	$result = `$cmd`;
+        print $result;
     	}
     }
   }
