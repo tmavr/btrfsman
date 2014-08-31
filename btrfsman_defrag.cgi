@@ -21,8 +21,8 @@ if ($point =~ /[ %&<>!\x27\x60\x3B\x3A\x\n\r\l]/) {
 
 if (($act eq 'defrag') && ($point) ) {
   if ($point) {
-    print "Taking Action Executing Command:#", $text{'txt_p'};
     $cmd = "btrfs fi defrag $opt $point 2>&1";
+    print  $text{txt_executing}, $cmd, $text{'txt_p'};
     $result=`$cmd`;
     print $cmd, $text{'txt_p'}, $text{'defrag_started'}, $text{'txt_p'} ;
   }

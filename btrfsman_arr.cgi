@@ -36,7 +36,7 @@ if (($opt_cmd) && ($opt_ad) && ($opt_dev) && ($opt_mp) ) {
 else{
 	if (($opt_cmd) && ($opt_source_dev) && ($opt_target_dev) && ($opt_mp) ) {
 		$cmd = "$opt_cmd $opt_o $opt_source_dev $opt_target_dev $opt_mp 2>&1";
-		print "Taking Action Executing Command:#", $cmd, $text{'txt_p'};
+		print  $text{txt_executing}, $cmd, $text{'txt_p'};
 	  $result=`$cmd`;
 	  print $result;		
   }

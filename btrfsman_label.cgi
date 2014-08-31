@@ -27,7 +27,7 @@ if (($act eq 'label') && ($mountpoint) ) {
   if ($newlabel) {
     
     $cmd = "btrfs fi label $mountpoint $newlabel 2>&1";
-		print "Taking Action Executing Command:#", $cmd, $text{'txt_p'};
+		print $text{txt_executing}, $cmd, $text{'txt_p'};
 	  $result=`$cmd`;
 	  print $result, $text{'txt_p'};		
 	  print $text{'label_changed'}, $text{'txt_p'} ;

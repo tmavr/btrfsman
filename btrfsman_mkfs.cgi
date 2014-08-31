@@ -41,7 +41,7 @@ else{
 		
 	if ($cmdconfirm){
 		$cmdconfirm=un_urlize($cmdconfirm);
-		print "EXECUTING COMMAND:", $cmdconfirm, "<p>";
+		print  $text{txt_executing}, $cmd, $text{'txt_p'};
 		$result=`$cmdconfirm`;
 		print $result;
 	}

@@ -38,7 +38,7 @@ txt_warn_ro=Warning RadOnly FileSystem
 
 txt_error_string=Not a safe string to use
 txt_confirm_command=Please press button to Confirm you want to execute the command!<p>
-
+txt_executing=Taking Action Executing Command:#
 
 index_bt_rescan=Rescan BTRFS Devices
 index_bt_rescan_help=Click this button to #btrfs device scan
@@ -111,7 +111,7 @@ sub_bt_create_help=Click to create SubVolume, must confirm!
 sub_operation=Subvolume operation executed
 
 arr_title=Btrfs Management and Configuration - Add Remove Replace
-arr_h=<h1>Add Remove Replace - WORK IN PROGRESS - DO NOT USE</h1>
+arr_h=<h1>Add Remove Replace</h1>
 arr_help=<p>Please be carefull when adding or deleting devices. <p>If you have a failed drive, first try Replace as it is much faster. Otherwise first add a device and then remove the failed device. <p> Note that partition info is shown via GNU parted, just make sure you double check any device names.<p>
 
 arr_operation=ARR operation executed
@@ -132,7 +132,7 @@ txt_mkfssynopsis=mkfs.btrfs [ -A alloc-start ] [ -b byte-count ] [ -d data-profi
 txt_devicesynopsis=btrfs device add [-Kf] dev [dev...] path <p> btrfs device delete dev [dev...] path <p>
 
 mkfs_title=Btrfs Management and Configuration - Make FileSystem
-mkfs_h=<h1>mkfs - WORK IN PROGRESS - DO NOT USE</h1>
+mkfs_h=<h1>mkfs</h1>
 mkfs_help=<p>Please be carefull. <p> Note that partition info is shown via GNU parted, just make sure you double check any device names.<p>
 mkfs_expert_h=<h1>Expert Mode</h1>
 mkfs_expert_bt=Expert Mode Comit

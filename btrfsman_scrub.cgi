@@ -17,13 +17,13 @@ if ($act) {
     print "$in<p>Taking Action Executing Command:#";
     if ($ro eq 'ro'){
     	$cmd= "btrfs scrub $act $mp -R 2>&1";
-    	print "Executing:", $cmd, "<p>";
+    	print  $text{txt_executing}, $cmd, $text{'txt_p'};
     	$result = `$cmd`;
     	print $result;
     } else {
     	if ($ro eq 'rw'){
       	$cmd= "btrfs scrub $act $mp 2>&1";
-      	print "Executing:", $cmd, "<p>";
+      	print  $text{txt_executing}, $cmd, $text{'txt_p'};
       	$result = `$cmd`;
         print $result;
     	}
