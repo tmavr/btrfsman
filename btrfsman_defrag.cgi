@@ -28,8 +28,9 @@ if (($act eq 'defrag') && ($point) ) {
   }
 }
 else{
-	defragmpmenu();
-	defragfilemenu();
+	defragmp_menu();
+	defrag_filemenu();
+	
 }
 ui_print_footer('/', 'Webmin index', '', 'Module menu');
 
@@ -37,7 +38,7 @@ ui_print_footer('/', 'Webmin index', '', 'Module menu');
 
 
 
-sub defragmpmenu {
+sub defragmp_menu {
   print $text{'label_defragmp_h'};
   $result = `mount |grep btrfs`;
   $result =~  s/\n/<br>/g;
@@ -67,7 +68,7 @@ sub defragmpmenu {
 }
 
 
-sub defragfilemenu{
+sub defrag_filemenu{
 	print $text{'label_defragfile_h'};
 	print ui_buttons_start();
   print ui_buttons_row("btrfsman_defrag.cgi",  $text{'label_bt_defragstartfile'},  $text{'label_bt_defragstartfile_help'}, ui_hidden('act', 'defragfile'), ui_filebox('file'), ui_textbox('options','-r'));

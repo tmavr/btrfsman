@@ -19,6 +19,7 @@ index_dev=Devices:
 index_mounted_h=<p><h1>Status of Mounted BTRFS FileSystems</h1><p><p>
 index_mountgrep=#mount |grep btrfs
 index_youhave3=</b> mounted btrfs filesystems<p>
+
 index_mountp=<font color=darkblue>Mount point: </font>
 index_btrfsdf=#btrfs filesystem df
 index_btrfsss=#btrfs scrub status
@@ -136,3 +137,20 @@ mkfs_h=<h1>mkfs</h1>
 mkfs_help=<p>Please be carefull. <p> Note that partition info is shown via GNU parted, just make sure you double check any device names.<p>
 mkfs_expert_h=<h1>Expert Mode</h1>
 mkfs_expert_bt=Expert Mode Comit
+
+index_youhave4=</b> hdds<p>
+txt_other_opt= Other Options
+txt_label= Label
+txt_data= Data Protection Level
+txt_metadata= Metadata Protection Level
+txt_mp= Mount Point
+txt_device= Device
+txt_ar= Add or Remove
+txt_cmd= Command
+txt_target= Target
+txt_source= Source
+txt_devices= Devices
+
+balance_bt_balance_raid=Quick Balance and Convert
+balance_bt_balance_raid_help=<p>Use this form to easy change raid level and rebalance<p>
+

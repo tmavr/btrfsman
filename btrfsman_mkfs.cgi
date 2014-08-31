@@ -56,14 +56,15 @@ else{
 	  print $text{'mkfs_expert_h'};
 	  print $text{'txt_mkfssynopsis'}; 
 	  
+	  
 	  print ui_form_start("btrfsman_mkfs.cgi");
 	
 	  print ui_textbox('opt_mk', 'mkfs.btrfs',20,1), $text{'txt_p'};
-	  print ui_select('opt_m', 1, ["-m raid10", "-m raid1", "-m raid0", "-m single", "-m raid5", "-m raid6"]), $text{'txt_p'};
-	  print ui_select('opt_d', 1, ["-d raid10", "-d raid1", "-d raid0", "-d single", "-d raid5", "-d raid6"]), $text{'txt_p'};
-	  print ui_textbox('opt_label','-L NewLabel',30,0), $text{'txt_p'};
-	  print ui_textbox('opt_o',' ',20,0), $text{'txt_p'};
-	  print ui_textbox('opt_dev','/dev/sdWW /dev/sdXX /dev/sdYY /dev/sdZZ',40,0), $text{'txt_p'};
+	  print ui_select('opt_m', 1, ["-m raid10", "-m raid1", "-m raid0", "-m single", "-m raid5", "-m raid6"]), $text{'txt_metadata'}, $text{'txt_p'};
+	  print ui_select('opt_d', 1, ["-d raid10", "-d raid1", "-d raid0", "-d single", "-d raid5", "-d raid6"]), $text{'txt_data'}, $text{'txt_p'};
+	  print ui_textbox('opt_label','-L NewLabel',30,0), $text{'txt_label'},, $text{'txt_p'};
+	  print ui_textbox('opt_o',' ',20,0), $text{'txt_other_opt'}, $text{'txt_p'};
+	  print ui_textbox('opt_dev','/dev/sdWW /dev/sdXX /dev/sdYY /dev/sdZZ',40,0), $text{'txt_devices'}, $text{'txt_p'};
 	  
 	  print ui_form_end( [[undef, $text{'mkfs_expert_bt'}]] );
 	

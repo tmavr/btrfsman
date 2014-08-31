@@ -22,8 +22,8 @@ if ($volume =~ /[ %&<>!\x27\x60\x3B\x3A\x\n\r\l]/) {
 
 if (($act) && ($volume) ) {
   #if ($newlabel) {
-    print "Taking Action Executing Command:#", $text{'txt_p'};
-    print "btrfs subvolume $act $volume $opt", $text{'txt_p'};
+    print "NOT Taking Action Executing Command:#", $text{'txt_p'};
+    print "NOT btrfs subvolume $act $volume $opt", $text{'txt_p'};
     print $text{'sub_operation'}, $text{'txt_p'} ;
   #}
 }

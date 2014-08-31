@@ -63,6 +63,8 @@ sub scrub_menu {
     $result = `btrfs scrub status @mountedrive[$did]`;
     $result =~  s/\n/<br>/g;
     print ui_columns_row([ $text{'index_btrfsss'} , $result]);
+    
+    
 
     $result = `btrfs scrub status @mountedrive[$did] -R`;
     $result =~  s/\n/<br>/g;

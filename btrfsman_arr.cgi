@@ -57,10 +57,10 @@ else{
 	  print ui_form_start("btrfsman_arr.cgi");
 	
 	  print ui_hidden('opt_cmd', 'btrfs device'), $text{'txt_p'};
-	  print ui_select("opt_ad", 1, [ "add", "delete"]), , $text{'txt_p'};  
-	  print ui_textbox('opt_o',' ',20,0), $text{'txt_p'};
-	  print ui_textbox('opt_dev','/dev/sdWW /dev/sdXX /dev/sdYY /dev/sdZZ',40,0), $text{'txt_p'};
-	  print ui_select('opt_mp', 1, [@mountedrive]), $text{'txt_p'};
+	  print ui_select("opt_ad", 1, [ "add", "delete"]), $text{'txt_ar'}, $text{'txt_p'};  
+	  print ui_textbox('opt_o',' ',20,0), $text{'txt_other_opt'}, $text{'txt_p'};  
+	  print ui_textbox('opt_dev','/dev/sdWW /dev/sdXX /dev/sdYY /dev/sdZZ',40,0), $text{'txt_device'}, $text{'txt_p'};
+	  print ui_select('opt_mp', 1, [@mountedrive]), $text{'txt_mp'}, $text{'txt_p'};
 	  
 	  print ui_form_end( [[undef, $text{'arr_expert_bt'}]] );
 	  
@@ -71,10 +71,10 @@ else{
 	 
 	  print ui_form_start("btrfsman_arr.cgi");
 	  print ui_hidden('opt_cmd', 'btrfs replace start'), $text{'txt_p'};
-	  print ui_textbox('opt_o',' ',20,0), $text{'txt_p'};
-	  print ui_textbox('opt_source_dev','/dev/sdSOURCE',40,0), $text{'txt_p'};
-	  print ui_textbox('opt_target_dev','/dev/sdTARGET',40,0), $text{'txt_p'};
-	  print ui_select('opt_mp', 1, [@mountedrive]), $text{'txt_p'};
+	  print ui_textbox('opt_o',' ',20,0),$text{'txt_other_opt'}, $text{'txt_p'};
+	  print ui_textbox('opt_source_dev','/dev/sdSOURCE',40,0), $text{'txt_source'},  $text{'txt_p'};
+	  print ui_textbox('opt_target_dev','/dev/sdTARGET',40,0), $text{'txt_target'}, $text{'txt_p'};
+	  print ui_select('opt_mp', 1, [@mountedrive]), $text{'txt_mp'}, $text{'txt_p'};
 	  
 	  print ui_form_end( [[undef, $text{'arr_expert_replace_bt'}]] ); 
 		

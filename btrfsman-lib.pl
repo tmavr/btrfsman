@@ -28,6 +28,28 @@ sub show_parted{
   	print ui_table_row($result);
   		
   	print ui_hidden_table_end();
+  	
+
+    @splitres = split  /\/dev\// , $result;
+  
+    $did=1;
+
+    $did=1;
+    for (1..scalar(@splitres)-1){
+    	@splitres2 = split /:/, @splitres[$did] ;
+      @devicelist[$did]=  '/dev/' .  @splitres2[0];
+      $did++;
+    }    
+    
+    print $text{'index_youhave1'}, scalar(@devicelist), $text{'index_youhave4'};
+    $did=1;
+    for (1..scalar(@devicelist)-1){
+    	
+      print @devicelist[$did], " ";
+      $did++;
+    }   
+    
+  	return @devicelist;
   		
   }else{
   	 print $text{'txt_error'}, $text{'txt_error_noparted'}, $text{'txt_p'};
